@@ -21,7 +21,7 @@ module.exports = {
   deploy : {
     production : {},
     staging: {
-      user: 'jenkins',
+      user: 'root',
       host: '192.168.62.241',
       ref: 'origin/master',
       repo: 'https://github.com/CancelParadise/MyDiary.git',
