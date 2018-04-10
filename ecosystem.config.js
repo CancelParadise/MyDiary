@@ -5,7 +5,7 @@ module.exports = {
    */
   apps : [
     {
-      name      : 'my_react_app',
+      name      : 'my-app',
       script    : 'npm',
       args      : 'run start:production',
       env_production : {
@@ -21,12 +21,12 @@ module.exports = {
   deploy : {
     production : {},
     staging: {
-      user: 'your-user',
-      host: 'your-server',
+      user: 'root',
+      host: '192.168.62.241',
       ref: 'origin/master',
-      repo: 'git@github.com:gituser/yourrepo.git',
-      path: '/var/www/yourprojectpath',
-      key: '/absolute/path/to/key',
+      repo: 'https://github.com/CancelParadise/MyDiary.git',
+      path: '/var/lib/jenkins/workspace/Test Job',
+      key: '/var/ssh/id_rsa',
       ssh_options: ['ForwardAgent=yes'],
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
     },
