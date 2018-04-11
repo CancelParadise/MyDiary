@@ -28,7 +28,10 @@ module.exports = {
       path: '/var/lib/jenkins/workspace/MyDiary',
       key: '~/.ssh/id_rsa',
       ssh_options: ['ForwardAgent=yes'],
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+      'pre-deploy': 'npm install'
+      'post-deploy': 'chmod -x ecosystem.config.js && pm2 startOrRestart ecosystem.config.js --env production'
+     // 'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+      
     },
     dev : {}
   }
