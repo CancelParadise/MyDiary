@@ -21,13 +21,13 @@ module.exports = {
   deploy : {
     production : {},
     staging: {
-      user: 'jenkins',
+      user: 'root',
       host: ['192.168.62.241'],
       ref: 'origin/master',
       repo: 'git@github.com:CancelParadise/MyDiary.git',
-      path: '/var/lib/jenkins/workspace/Test Job',
-     // key: '/var/lib/jenkins/.ssh/id_rsa',
-     // ssh_options: ['ForwardAgent=yes'],
+      path: '/var/lib/jenkins/workspace/MyDiary',
+      key: '~/.ssh/id_rsa',
+      ssh_options: ['ForwardAgent=yes'],
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
     },
     dev : {}
