@@ -30,8 +30,6 @@ module.exports = {
       ssh_options: ['ForwardAgent=yes'],
       'pre-deploy': 'npm install'
       'post-deploy': 'chmod -x ecosystem.config.js && pm2 startOrRestart ecosystem.config.js --env production'
-     // 'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
-      
     },
     dev : {}
   }
